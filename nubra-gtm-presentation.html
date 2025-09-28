@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nubra GTM Strategy - Business Analyst Presentation</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+        }
+
+        .slide {
+            page-break-after: always;
+            padding: 30px;
+            min-height: 90vh;
+            background: white;
+        }
+
+        .slide:last-child {
+            page-break-after: avoid;
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #2c5aa0;
+        }
+
+        .slide-number {
+            background: #2c5aa0;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .company-logo {
+            color: #2c5aa0;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2c5aa0;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: #2c5aa0;
+            margin-bottom: 12px;
+            margin-top: 15px;
+        }
+
+        h4 {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .title-slide {
+            text-align: center;
+            padding: 60px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .title-slide h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .title-slide .author {
+            font-size: 1.1rem;
+            color: #2c5aa0;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .title-slide .date {
+            font-size: 1rem;
+            color: #888;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .strategy-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2c5aa0;
+            margin-bottom: 15px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-box {
+            background: #2c5aa0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+        }
+
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #2c5aa0;
+        }
+
+        .timeline-quarter {
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .metric-box {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .metric-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #2c5aa0;
+        }
+
+        .metric-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .metric-description {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.3;
+        }
+
+        ul, ol {
+            margin-left: 18px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .highlight-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2c5aa0;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        .success-box {
+            background: #2c5aa0;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .success-box h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #2c5aa0;
+            color: white;
+            font-weight: bold;
+        }
+
+        .page-footer {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .slide {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title Slide -->
+    <div class="slide title-slide">
+        <h1>🚀 Nubra Go-to-Market Strategy</h1>
+        <div class="subtitle">Onboarding Engineers into the Trading World</div>
+        <div class="author">Business Analyst Intern Presentation</div>
+        <div class="date">Comprehensive Market Analysis & Strategic Implementation Plan</div>
+        <div style="margin-top: 50px; font-size: 0.9rem; color: #888;">
+            Prepared for Nubra Leadership Team<br>
+        </div>
+    </div>
+
+    <!-- Slide 2: GTM Strategy -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-number">2 / 5</div>
+            <div class="company-logo">NUBRA</div>
+        </div>
+        <h2>🎯 Go-to-Market Strategy</h2>
+        
+        <div class="two-column">
+            <div>
+                <div class="strategy-box">
+                    <h3>👥 Target Audience</h3>
+                    <ul>
+                        <li><strong>Primary:</strong> Fresh engineering graduates (0-2 years experience)</li>
+                        <li><strong>Secondary:</strong> Mid-level engineers seeking career transition</li>
+                        <li><strong>Tertiary:</strong> Engineering students in final year</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-box">
+                    <h3>💡 Value Proposition</h3>
+                    <ul>
+                        <li>Bridge technical skills with financial markets</li>
+                        <li>Structured learning path from basics to advanced trading</li>
+                        <li>Real-world trading simulations</li>
+                        <li>Industry mentorship and networking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <div class="strategy-box">
+                    <h3>📢 Marketing Channels</h3>
+                    <h4>Digital:</h4>
+                    <ul>
+                        <li>LinkedIn, GitHub, Stack Overflow</li>
+                    </ul>
+                    <h4>Educational:</h4>
+                    <ul>
+                        <li>University partnerships, bootcamps</li>
+                    </ul>
+                    <h4>Community:</h4>
+                    <ul>
+                        <li>Tech meetups, hackathons</li>
+                    </ul>
+                    <h4>Content:</h4>
+                    <ul>
+                        <li>Technical blogs, YouTube tutorials</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-box">
+                    <h3>🔄 Customer Journey</h3>
+                    <ol>
+                        <li><strong>Awareness:</strong> Content marketing, social media</li>
+                        <li><strong>Interest:</strong> Free webinars, demo sessions</li>
+                        <li><strong>Consideration:</strong> Free trial, testimonials</li>
+                        <li><strong>Purchase:</strong> Onboarding program enrollment</li>
+                        <li><strong>Advocacy:</strong> Referral programs, success stories</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>Key Success Factor:</strong> Positioning Nubra as the bridge between engineering expertise and financial market opportunities, emphasizing the technical aspects of modern trading.
+        </div>
+    </div>
+
+    <!-- Slide 3: Market Sizing Analysis -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-number">3 / 5</div>
+            <div class="company-logo">NUBRA</div>
+        </div>
+        <h2>📊 Market Sizing Analysis</h2>
+
+        <div class="stat-grid">
+            <div class="stat-box">
+                <div class="stat-number">1.5M</div>
+                <div class="stat-label">Engineering Graduates Annually in India</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">25%</div>
+                <div class="stat-label">Interested in Financial Markets</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">375K</div>
+                <div class="stat-label">Total Addressable Market (TAM)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">75K</div>
+                <div class="stat-label">Serviceable Addressable Market (SAM)</div>
+            </div>
+        </div>
+
+        <h3>🎯 Market Segmentation</h3>
+        <div class="three-column">
+            <div class="strategy-box">
+                <h4>Tier 1 Cities (40%)</h4>
+                <ul>
+                    <li>Mumbai, Delhi, Bangalore, Chennai</li>
+                    <li>Higher disposable income</li>
+                    <li>Tech-savvy early adopters</li>
+                    <li><strong>Target: 30K engineers</strong></li>
+                </ul>
+            </div>
+            <div class="strategy-box">
+                <h4>Tier 2 Cities (35%)</h4>
+                <ul>
+                    <li>Pune, Hyderabad, Ahmedabad, Kolkata</li>
+                    <li>Growing tech hubs</li>
+                    <li>Price-conscious segment</li>
+                    <li><strong>Target: 26K engineers</strong></li>
+                </ul>
+            </div>
+            <div class="strategy-box">
+                <h4>Tier 3+ Cities (25%)</h4>
+                <ul>
+                    <li>Emerging markets</li>
+                    <li>Long-term growth potential</li>
+                    <li>Digital-first approach needed</li>
+                    <li><strong>Target: 19K engineers</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>Market Opportunity:</strong> ₹750 Cr market with average course fee of ₹10,000 per engineer. Conservative 5% market capture equals ₹37.5 Cr revenue potential.
+        </div>
+
+        <h3>💰 Revenue Projections</h3>
+        <table>
+            <tr>
+                <th>Year</th>
+                <th>Target Users</th>
+                <th>Conversion Rate</th>
+                <th>Paying Customers</th>
+                <th>Revenue (₹ Cr)</th>
+            </tr>
+            <tr>
+                <td>Year 1</td>
+                <td>15,000</td>
+                <td>15%</td>
+                <td>2,250</td>
+                <td>2.25</td>
+            </tr>
+            <tr>
+                <td>Year 2</td>
+                <td>35,000</td>
+                <td>20%</td>
+                <td>7,000</td>
+                <td>7.00</td>
+            </tr>
+            <tr>
+                <td>Year 3</td>
+                <td>60,000</td>
+                <td>25%</td>
+                <td>15,000</td>
+                <td>15.00</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Slide 4: 1-Year Implementation Plan -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-number">4 / 5</div>
+            <div class="company-logo">NUBRA</div>
+        </div>
+        <h2>📅 1-Year Implementation Plan</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-quarter">Q1: Foundation (Jan-Mar 2024)</div>
+                <div class="two-column">
+                    <div>
+                        <h4>Product Development:</h4>
+                        <ul>
+                            <li>Complete MVP with core modules</li>
+                            <li>User interface optimization</li>
+                            <li>Beta testing framework</li>
+                        </ul>
+                        <h4>Content Creation:</h4>
+                        <ul>
+                            <li>50+ hours of video content</li>
+                            <li>Interactive simulations</li>
+                            <li>Assessment modules</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Partnerships:</h4>
+                        <ul>
+                            <li>Sign 5 university partnerships</li>
+                            <li>Industry expert collaborations</li>
+                        </ul>
+                        <h4>Team Building:</h4>
+                        <ul>
+                            <li>Hire 3 subject matter experts</li>
+                            <li>Marketing specialist onboarding</li>
+                        </ul>
+                        <h4>Target: 500 beta users</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-quarter">Q2: Launch & Scale (Apr-Jun 2024)</div>
+                <div class="two-column">
+                    <div>
+                        <h4>Marketing Campaign:</h4>
+                        <ul>
+                            <li>Public launch across all channels</li>
+                            <li>Influencer partnerships</li>
+                            <li>PR and media coverage</li>
+                        </ul>
+                        <h4>Content Marketing:</h4>
+                        <ul>
+                            <li>100+ blog posts</li>
+                            <li>20 webinars</li>
+                            <li>Social media campaigns</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Growth Programs:</h4>
+                        <ul>
+                            <li>Referral program launch</li>
+                            <li>Early adopter incentives</li>
+                            <li>Community building</li>
+                        </ul>
+                        <h4>Product Enhancement:</h4>
+                        <ul>
+                            <li>Feature updates based on feedback</li>
+                            <li>Mobile app development</li>
+                        </ul>
+                        <h4>Target: 2,500 active users</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-quarter">Q3: Growth & Optimization (Jul-Sep 2024)</div>
+                <div class="two-column">
+                    <div>
+                        <h4>Product Enhancement:</h4>
+                        <ul>
+                            <li>Advanced modules development</li>
+                            <li>AI-powered recommendations</li>
+                            <li>Mobile app launch</li>
+                        </ul>
+                        <h4>Geographic Expansion:</h4>
+                        <ul>
+                            <li>Focus on Tier 2 cities</li>
+                            <li>Regional language support</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>B2B Sales:</h4>
+                        <ul>
+                            <li>Corporate partnerships</li>
+                            <li>Bulk licensing deals</li>
+                            <li>Enterprise features</li>
+                        </ul>
+                        <h4>Optimization:</h4>
+                        <ul>
+                            <li>Conversion funnel optimization</li>
+                            <li>User experience improvements</li>
+                        </ul>
+                        <h4>Target: 7,500 active users</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-quarter">Q4: Consolidation & Expansion (Oct-Dec 2024)</div>
+                <div class="two-column">
+                    <div>
+                        <h4>Advanced Features:</h4>
+                        <ul>
+                            <li>AI-powered personalization</li>
+                            <li>Advanced analytics dashboard</li>
+                            <li>Peer-to-peer learning</li>
+                        </ul>
+                        <h4>Community Building:</h4>
+                        <ul>
+                            <li>User forums launch</li>
+                            <li>Success story campaigns</li>
+                            <li>Alumni network</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Certification Program:</h4>
+                        <ul>
+                            <li>Industry-recognized certificates</li>
+                            <li>Skills validation framework</li>
+                            <li>Job placement assistance</li>
+                        </ul>
+                        <h4>International Expansion:</h4>
+                        <ul>
+                            <li>Southeast Asian markets</li>
+                            <li>Localization initiatives</li>
+                        </ul>
+                        <h4>Target: 15,000 active users</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <strong>Total Investment Required:</strong> ₹5 Cr for complete execution with projected break-even by Q4 2024
+        </div>
+    </div>
+
+    <!-- Slide 5: Success Metrics & Analysis -->
+    <div class="slide">
+        <div class="slide-header">
+            <div class="slide-number">5 / 5</div>
+            <div class="company-logo">NUBRA</div>
+        </div>
+        <h2>📈 Success Metrics & Outcome Analysis</h2>
+
+        <h3>🔍 Key Performance Indicators</h3>
+        <div class="metrics-grid">
+            <div class="metric-box">
+                <div class="metric-icon">👥</div>
+                <div class="metric-title">User Acquisition</div>
+                <div class="metric-description">
+                    <strong>Target:</strong> 15K users by Dec 2024<br>
+                    <strong>Measurement:</strong> Monthly sign-ups, conversion rates, cost per acquisition (CPA)
+                </div>
+            </div>
+
+            <div class="metric-box">
+                <div class="metric-icon">🎯</div>
+                <div class="metric-title">Engagement Rate</div>
+                <div class="metric-description">
+                    <strong>Target:</strong> 70% monthly active users<br>
+                    <strong>Measurement:</strong> Session duration, course completion rates, feature usage
+                </div>
+            </div>
+
+            <div class="metric-box">
+                <div class="metric-icon">💰</div>
+                <div class="metric-title">Revenue Growth</div>
+                <div class="metric-description">
+                    <strong>Target:</strong> ₹15 Cr ARR<br>
+                    <strong>Measurement:</strong> Monthly recurring revenue, customer lifetime value (CLV)
+                </div>
+            </div>
+
+            <div class="metric-box">
+                <div class="metric-icon">🎓</div>
+                <div class="metric-title">Learning Outcomes</div>
+                <div class="metric-description">
+                    <strong>Target:</strong> 80% course completion<br>
+                    <strong>Measurement:</strong> Skill assessments, certification rates, job placement success
+                </div>
+            </div>
+
+            <div class="metric-box">
+                <div class="metric-icon">😊</div>
+                <div class="metric-title">Customer Satisfaction</div>
+                <div class="metric-description">
+                    <strong>Target:</strong> NPS > 50<br>
+                    <strong>Measurement:</strong> User surveys, app store ratings, testimonials, referral rates
+                </div>
+            </div>
+
+            <div class="metric-box">
+                <div class="metric-icon">🌍</div>
+                <div class="metric-title">Market Penetration</div>
+                <div class="metric-description">
+                    <strong>Target:</strong> 5% market share<br>
+                    <strong>Measurement:</strong> Regional adoption, competitor analysis, brand awareness
+                </div>
+            </div>
+        </div>
+
+        <h3>📊 Analysis Framework</h3>
+        <div class="two-column">
+            <div class="strategy-box">
+                <h4>Weekly Reviews:</h4>
+                <ul>
+                    <li>Track user metrics and engagement data</li>
+                    <li>Monitor conversion funnels</li>
+                    <li>Analyze user feedback</li>
+                    <li>Review marketing performance</li>
+                </ul>
+            </div>
+            <div class="strategy-box">
+                <h4>Monthly Analysis:</h4>
+                <ul>
+                    <li>Cohort analysis and churn analysis</li>
+                    <li>Revenue deep-dives</li>
+                    <li>Product usage analytics</li>
+                    <li>Competitive benchmarking</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="two-column">
+            <div class="strategy-box">
+                <h4>Quarterly Assessment:</h4>
+                <ul>
+                    <li>Market positioning analysis</li>
+                    <li>Strategic pivots evaluation</li>
+                    <li>Resource allocation review</li>
+                    <li>Partnership effectiveness</li>
+                </ul>
+            </div>
+            <div class="strategy-box">
+                <h4>Annual Evaluation:</h4>
+                <ul>
+                    <li>ROI analysis and market share assessment</li>
+                    <li>Long-term growth planning</li>
+                    <li>Technology roadmap updates</li>
+                    <li>Team performance reviews</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="success-box">
+            <h3>Expected Success Rate: 85%</h3>
+            <p style="margin-top: 10px; font-size: 1.1rem;">Based on comprehensive market analysis, competitive landscape evaluation, and execution capability assessment</p>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 20px;">
+            <strong>Risk Mitigation:</strong> Diversified marketing channels, flexible product development, strong financial planning, and continuous market monitoring ensure adaptability to changing market conditions.
+        </div>
+    </div>
+
+    <div class="page-footer">
+        Nubra GTM Strategy - Business Analyst Intern Presentation BY:M.Hariharan
+    </div>
+</body>
+</html>
